@@ -36,13 +36,13 @@ function playRound(player , computer){
     computer === 'paper' && player === 'rock' ||
     computer === 'scissors' && player === 'paper'){
         console.log('you lost')
-        computerScore ++
+        computerScore ++;
     }else if (computer === player){
-        console.log ('its a tie')
+        console.log ('its a tie');
     }
     else {
         console.log('you win');
-        humanScore ++
+        humanScore ++;
 
     } 
 
@@ -53,11 +53,11 @@ function playRound(player , computer){
 
 
 function playGame(){
-    for (i =1; i<=5; i++){
-        console.log(`round ${i}`)
+    for (let i =1; i<=5; i++){
+        console.log(`\n round ${i}`);
 
 
-    const player = playerMove(prompt('choose'))
+    const player = playerMove(prompt('choose'));
     if(player){
         const computer = randomMove();
         playRound(player,computer);
@@ -65,10 +65,15 @@ function playGame(){
     }
 
     if (humanScore > computerScore){
-        console.log('you won the game');
+        console.log('game over \n you won the game.');
+        console.log(`Refresh the page to play again`);
     }else if (humanScore < computerScore){
-        console.log('you lost the game')
-    }else console.log('the game was a tie')
+        console.log('game over \n you lost the game');
+        console.log(`Refresh the page to play again`);
+    }else {
+        console.log(' game over \n the game was a tie');
+        console.log(`Refresh the page to play again`);
+    }
 }
 
 playGame()
